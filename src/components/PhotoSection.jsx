@@ -8,8 +8,10 @@ gsap.registerPlugin(ScrollTrigger)
 const PhotoSection = ({ 
   images = [], // Array of { src, alt, label }
   paragraph, 
-  backgroundTexts = [] 
+  backgroundTexts = [],
+  theme
 }) => {
+  const accentClass = theme === 'blush' ? 'text-[#C97B8B]' : 'text-[#800020]'
   const photoSectionRef = useRef(null)
   const middlePhotoRef = useRef(null)
   const leftPhotoRef = useRef(null)
@@ -19,9 +21,9 @@ const PhotoSection = ({
   
   // Default images if none provided
   const defaultImages = [
-    { src: '/assets/images/prenup/prenup3.jpeg', alt: 'Photo 1', label: 'Memories' },
-    { src: '/assets/images/prenup/prenup4.jpeg', alt: 'Photo 2', label: 'Together' },
-    { src: '/assets/images/prenup/prenup5.jpeg', alt: 'Photo 3', label: 'Love' }
+    { src: '/assets/images/prenup/prenup3.jpg', alt: 'Photo 1', label: 'Memories' },
+    { src: '/assets/images/prenup/prenup4.jpg', alt: 'Photo 2', label: 'Together' },
+    { src: '/assets/images/prenup/prenup5.jpg', alt: 'Photo 3', label: 'Love' }
   ]
 
   const [startIndex, setStartIndex] = useState(0)
@@ -121,7 +123,7 @@ const PhotoSection = ({
           }}
         >
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800020] whitespace-nowrap"
+            className={`font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${accentClass} whitespace-nowrap`}
             style={{
               position: 'absolute',
               top: '5%',
@@ -132,7 +134,7 @@ const PhotoSection = ({
             {texts[0] || texts[0]}
           </p>
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800020] whitespace-nowrap"
+            className={`font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${accentClass} whitespace-nowrap`}
             style={{
               position: 'absolute',
               top: '25%',
@@ -143,7 +145,7 @@ const PhotoSection = ({
             {texts[1] || texts[0]}
           </p>
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800020] whitespace-nowrap"
+            className={`font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${accentClass} whitespace-nowrap`}
             style={{
               position: 'absolute',
               bottom: '25%',
@@ -154,7 +156,7 @@ const PhotoSection = ({
             {texts[2] || texts[0]}
           </p>
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800020] whitespace-nowrap"
+            className={`font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${accentClass} whitespace-nowrap`}
             style={{
               position: 'absolute',
               bottom: '5%',
@@ -165,7 +167,7 @@ const PhotoSection = ({
             {texts[3] || texts[0]}
           </p>
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800020] whitespace-nowrap"
+            className={`font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${accentClass} whitespace-nowrap`}
             style={{
               position: 'absolute',
               top: '50%',
@@ -177,7 +179,7 @@ const PhotoSection = ({
           </p>
           {/* Additional right side text elements */}
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800020] whitespace-nowrap"
+            className={`font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${accentClass} whitespace-nowrap`}
             style={{
               position: 'absolute',
               top: '15%',
@@ -188,7 +190,7 @@ const PhotoSection = ({
             {texts[0] || 'Forever'}
           </p>
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800020] whitespace-nowrap"
+            className={`font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${accentClass} whitespace-nowrap`}
             style={{
               position: 'absolute',
               top: '40%',
@@ -199,7 +201,7 @@ const PhotoSection = ({
             {texts[1] || 'Always'}
           </p>
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800020] whitespace-nowrap"
+            className={`font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${accentClass} whitespace-nowrap`}
             style={{
               position: 'absolute',
               bottom: '40%',
@@ -210,7 +212,7 @@ const PhotoSection = ({
             {texts[2] || 'Together'}
           </p>
           <p 
-            className="font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#800020] whitespace-nowrap"
+            className={`font-handwritten text-5xl sm:text-6xl md:text-7xl lg:text-8xl ${accentClass} whitespace-nowrap`}
             style={{
               position: 'absolute',
               bottom: '15%',
@@ -246,7 +248,7 @@ const PhotoSection = ({
                 }}
               ></div>
               <div className="p-2 text-center">
-                <div className="text-sm sm:text-lg text-[#800020] font-handwritten">
+                <div className={`text-sm sm:text-lg ${accentClass} font-handwritten`}>
                   {displayImages[0].label || 'Memories'}
                 </div>
               </div>
@@ -273,7 +275,7 @@ const PhotoSection = ({
                 }}
               ></div>
               <div className="p-2 text-center">
-                <div className="text-sm sm:text-lg text-[#800020] font-handwritten">
+                <div className={`text-sm sm:text-lg ${accentClass} font-handwritten`}>
                   {displayImages[1].label || 'Together'}
                 </div>
               </div>
@@ -300,7 +302,7 @@ const PhotoSection = ({
                 }}
               ></div>
               <div className="p-2 text-center">
-                <div className="text-sm sm:text-lg text-[#800020] font-handwritten">
+                <div className={`text-sm sm:text-lg ${accentClass} font-handwritten`}>
                   {displayImages[2].label || 'Love'}
                 </div>
               </div>

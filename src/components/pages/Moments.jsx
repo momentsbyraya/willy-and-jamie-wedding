@@ -46,14 +46,14 @@ const Moments = () => {
 
   // All prenup images
   const allPrenupImages = [
-    '/assets/images/prenup/prenup2.webp',
-    '/assets/images/prenup/prenup3.jpeg',
-    '/assets/images/prenup/prenup4.jpeg',
-    '/assets/images/prenup/prenup5.jpeg',
-    '/assets/images/prenup/prenup6.webp',
-    '/assets/images/prenup/prenup7.webp',
-    '/assets/images/prenup/prenup8.webp',
-    '/assets/images/prenup/prenup9.webp'
+    '/assets/images/prenup/prenup2.jpg',
+    '/assets/images/prenup/prenup3.jpg',
+    '/assets/images/prenup/prenup4.jpg',
+    '/assets/images/prenup/prenup5.jpg',
+    '/assets/images/prenup/prenup6.jpg',
+    '/assets/images/prenup/prenup7.jpg',
+    '/assets/images/prenup/prenup8.jpg',
+    '/assets/images/prenup/prenup9.jpg'
   ]
 
   // Images array for the lightbox (includes all images in same order)
@@ -64,12 +64,11 @@ const Moments = () => {
 
   // Polaroid images for the scrollable container
   const polaroidImages = [
-    { src: '/assets/images/prenup/prenup10.webp', rotation: -5, index: 3 },
-    { src: '/assets/images/prenup/prenup11.webp', rotation: 5, index: 4 },
-    { src: '/assets/images/prenup/prenup12.webp', rotation: -3, index: 5 },
-    { src: '/assets/images/prenup/prenup13.webp', rotation: 3, index: 6 },
-    { src: '/assets/images/prenup/prenup14.webp', rotation: -4, index: 7 },
-    { src: '/assets/images/prenup/prenup15.webp', rotation: 2, index: 8 }
+    { src: '/assets/images/prenup/prenup10.jpg', rotation: -5, index: 3 },
+    { src: '/assets/images/prenup/prenup11.jpg', rotation: 5, index: 4 },
+    { src: '/assets/images/prenup/prenup12.jpg', rotation: -3, index: 5 },
+    { src: '/assets/images/prenup/prenup13.jpg', rotation: 3, index: 6 },
+    { src: '/assets/images/prenup/prenup14.jpg', rotation: -4, index: 7 }
   ]
 
   useEffect(() => {
@@ -445,13 +444,13 @@ const Moments = () => {
           className="absolute inset-0 bg-white"
         />
         
-        {/* Image Banner - Similar to Details page */}
+        {/* Image Banner — no top gap; crop centered on couple / faces */}
         <div className="relative z-20 w-screen" style={{ width: '100vw' }}>
-          <div className="relative w-full h-[250px] sm:h-[250px] md:h-[300px] lg:h-[350px]">
+          <div className="relative w-full h-[250px] sm:h-[250px] md:h-[300px] lg:h-[350px] overflow-hidden">
             <img 
-              src="/assets/images/prenup/prenup1.jpeg" 
+              src="/assets/images/prenup/prenup3.jpg" 
               alt="Banner image"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[52%_24%] sm:object-[53%_25%] md:object-[54%_26%] lg:object-[55%_27%]"
             />
             {/* Soft transparent white gradient layers at bottom */}
             <GradientLayer height="h-32" opacity={0.7} gradientId="whiteGradient1" />
@@ -501,7 +500,7 @@ const Moments = () => {
           <div ref={firstParagraphRef} className="relative z-20 w-full max-w-4xl px-8 sm:px-12 md:px-8 lg:px-16">
             <div className="alice-regular font-black text-[#333333] leading-relaxed text-center" style={{ fontWeight: 900, fontSize: '1rem', lineHeight: '1.8' }}>
               <p className="mb-4">
-                Mikko had been the funny church musician since they were kids, while Siekinah was the song leader who somehow always made rehearsals fun. Around 2020, their constant practices and Sunday services turned into inside jokes, late-night chats, and “accidentally” spending more time together. Everyone at church lowkey saw it coming. Four years later, they finally made it official—turns out the real harmony wasn’t just in the music.
+                To be added
               </p>
             </div>
           </div>
@@ -628,14 +627,14 @@ const Moments = () => {
            <div ref={endPhoto4Ref} className="relative z-20 w-screen mt-8">
              <div className="relative">
                <img
-                 src="/assets/images/prenup/prenup9.webp"
+                src="/assets/images/prenup/prenup9.jpg"
                  alt="Love story photo"
                  className="w-full h-auto object-cover cursor-pointer"
                  loading="lazy"
                  decoding="async"
                  onClick={() => {
-                   const imageIndex = galleryImages.indexOf('/assets/images/prenup/prenup9.webp')
-                   setSelectedImage('/assets/images/prenup/prenup9.webp')
+                  const imageIndex = galleryImages.indexOf('/assets/images/prenup/prenup9.jpg')
+                  setSelectedImage('/assets/images/prenup/prenup9.jpg')
                    setSelectedImageIndex(imageIndex !== -1 ? imageIndex : 0)
                  }}
                />
@@ -720,8 +719,8 @@ const Moments = () => {
                    >
                      <div 
                        className="w-full h-40 sm:h-60 lg:h-72 bg-cover bg-center"
-                       style={{
-                         backgroundImage: 'url(/assets/images/prenup/prenup4.jpeg)',
+                      style={{
+                        backgroundImage: 'url(/assets/images/prenup/prenup4.jpg)',
                          borderTop: '4px solid white',
                          borderLeft: '4px solid white',
                          borderRight: '4px solid white'
@@ -743,8 +742,8 @@ const Moments = () => {
                    >
                      <div 
                        className="w-full h-40 sm:h-60 lg:h-72 bg-cover bg-center"
-                       style={{
-                         backgroundImage: 'url(/assets/images/prenup/prenup5.jpeg)',
+                      style={{
+                        backgroundImage: 'url(/assets/images/prenup/prenup5.jpg)',
                          borderTop: '4px solid white',
                          borderLeft: '4px solid white',
                          borderRight: '4px solid white'
@@ -766,8 +765,8 @@ const Moments = () => {
                    >
                      <div 
                        className="w-full h-40 sm:h-60 lg:h-72 bg-cover bg-center"
-                       style={{
-                         backgroundImage: 'url(/assets/images/prenup/prenup6.webp)',
+                      style={{
+                        backgroundImage: 'url(/assets/images/prenup/prenup6.jpg)',
                          borderTop: '4px solid white',
                          borderLeft: '4px solid white',
                          borderRight: '4px solid white'
@@ -791,8 +790,8 @@ const Moments = () => {
                    >
                      <div 
                        className="w-full h-40 sm:h-60 lg:h-72 bg-cover bg-center"
-                       style={{
-                         backgroundImage: 'url(/assets/images/prenup/prenup7.webp)',
+                      style={{
+                        backgroundImage: 'url(/assets/images/prenup/prenup7.jpg)',
                          borderTop: '4px solid white',
                          borderLeft: '4px solid white',
                          borderRight: '4px solid white'
@@ -814,8 +813,8 @@ const Moments = () => {
                    >
                      <div 
                        className="w-full h-40 sm:h-60 lg:h-72 bg-cover bg-center"
-                       style={{
-                         backgroundImage: 'url(/assets/images/prenup/prenup8.webp)',
+                      style={{
+                        backgroundImage: 'url(/assets/images/prenup/prenup8.jpg)',
                          borderTop: '4px solid white',
                          borderLeft: '4px solid white',
                          borderRight: '4px solid white'

@@ -25,6 +25,7 @@ const Details = () => {
   const location = useLocation()
   const [openFaqIndex, setOpenFaqIndex] = useState(null)
   const [copiedIndex, setCopiedIndex] = useState(null)
+  const [showAllFaqs, setShowAllFaqs] = useState(false)
   const sectionRef = useRef(null)
   const backButtonRef = useRef(null)
   const headerContentRef = useRef(null)
@@ -37,6 +38,7 @@ const Details = () => {
   const curvedDivider3Ref = useRef(null)
   const photoUploadAnchorRef = useRef(null)
   const faqItems = faqData
+  const DEFAULT_VISIBLE_FAQS = 4
 
   // Helper function to get icon and clean text for FAQ questions
   const getFaqIconAndText = (question) => {
@@ -258,12 +260,26 @@ const Details = () => {
   }, [])
 
   useEffect(() => {
-    if (location?.state?.scrollTo === 'photo-upload' && photoUploadAnchorRef.current) {
-      // Give the page a beat to settle (animations/layout)
+    const scrollTo = location?.state?.scrollTo
+    if (scrollTo === 'photo-upload' && photoUploadAnchorRef.current) {
       setTimeout(() => {
         photoUploadAnchorRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }, 300)
     }
+    if (scrollTo === 'faq') {
+      const scrollFaqIntoView = () => {
+        const el = faqRef.current || document.getElementById('faq')
+        el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+      // Details hero/layout needs a beat; run twice so scroll sticks after paint
+      const t1 = setTimeout(scrollFaqIntoView, 400)
+      const t2 = setTimeout(scrollFaqIntoView, 900)
+      return () => {
+        clearTimeout(t1)
+        clearTimeout(t2)
+      }
+    }
+    return undefined
   }, [location?.state?.scrollTo])
 
   return (
@@ -272,16 +288,17 @@ const Details = () => {
       ref={sectionRef}
       id="details"
       data-section="details"
-      className="relative pb-20 w-full overflow-hidden bg-white details-section"
+      className="relative pb-20 w-full overflow-hidden bg-[#FDF2F4] details-section"
     >
       {/* Prenup Image at Top */}
       <ImageBanner 
-        src="/assets/images/prenup/prenup1.jpeg" 
+        src="/assets/images/prenup/prenup1.jpg" 
         alt="Prenup photo"
+        theme="blush"
       />
       
-      {/* Content */}
-      <div className="relative z-20 flex items-center justify-center pt-12 pb-12">
+      {/* Content – pulled up so hero image extends into this area (more picture frame) */}
+      <div className="relative z-20 flex items-center justify-center -mt-8 pt-10 pb-12 bg-[#FDF2F4]">
         <div className="max-w-xs sm:max-w-md lg:max-w-3xl w-full mx-auto">
           {/* Header Section */}
           <div className="text-center">
@@ -289,7 +306,7 @@ const Details = () => {
               <p className="text-base sm:text-lg font-albert font-thin text-[#333333] max-w-3xl mx-auto leading-relaxed">
                 Join us as we exchange our vows
               </p>
-              <Divider />
+              <Divider theme="blush" />
             </div>
           </div>
 
@@ -308,7 +325,7 @@ const Details = () => {
         >
           <path 
             d="M0,50 Q300,20 600,50 T1200,50" 
-            stroke="#800020" 
+            stroke="#C97B8B" 
             strokeWidth="2" 
             fill="none"
             opacity="0.4"
@@ -334,7 +351,7 @@ const Details = () => {
         >
           <path 
             d="M0,50 Q300,20 600,50 T1200,50" 
-            stroke="#800020" 
+            stroke="#C97B8B" 
             strokeWidth="2" 
             fill="none"
             opacity="0.4"
@@ -345,15 +362,21 @@ const Details = () => {
       {/* Photo Section */}
       <div ref={photoSectionRef}>
       <PhotoSection
+        theme="blush"
         images={[
-          { src: '/assets/images/prenup/prenup2.webp', alt: 'Photo 1', label: 'Memories' },
-          { src: '/assets/images/prenup/prenup3.jpeg', alt: 'Photo 2', label: 'Together' },
-          { src: '/assets/images/prenup/prenup4.jpeg', alt: 'Photo 3', label: 'Love' },
-          { src: '/assets/images/prenup/prenup5.jpeg', alt: 'Photo 4', label: 'Joy' },
-          { src: '/assets/images/prenup/prenup6.webp', alt: 'Photo 5', label: 'Laughter' },
-          { src: '/assets/images/prenup/prenup7.webp', alt: 'Photo 6', label: 'Adventure' },
-          { src: '/assets/images/prenup/prenup8.webp', alt: 'Photo 7', label: 'Warmth' },
-          { src: '/assets/images/prenup/prenup9.webp', alt: 'Photo 8', label: 'Us' }
+          { src: '/assets/images/prenup/prenup2.jpg', alt: 'Photo 1', label: 'Memories' },
+          { src: '/assets/images/prenup/prenup3.jpg', alt: 'Photo 2', label: 'Together' },
+          { src: '/assets/images/prenup/prenup4.jpg', alt: 'Photo 3', label: 'Love' },
+          { src: '/assets/images/prenup/prenup5.jpg', alt: 'Photo 4', label: 'Joy' },
+          { src: '/assets/images/prenup/prenup6.jpg', alt: 'Photo 5', label: 'Laughter' },
+          { src: '/assets/images/prenup/prenup7.jpg', alt: 'Photo 6', label: 'Adventure' },
+          { src: '/assets/images/prenup/prenup8.jpg', alt: 'Photo 7', label: 'Warmth' },
+          { src: '/assets/images/prenup/prenup9.jpg', alt: 'Photo 8', label: 'Us' },
+          { src: '/assets/images/prenup/prenup10.jpg', alt: 'Photo 9', label: 'Forever' },
+          { src: '/assets/images/prenup/prenup11.jpg', alt: 'Photo 10', label: 'Always' },
+          { src: '/assets/images/prenup/prenup12.jpg', alt: 'Photo 11', label: 'Together' },
+          { src: '/assets/images/prenup/prenup13.jpg', alt: 'Photo 12', label: 'Love' },
+          { src: '/assets/images/prenup/prenup14.jpg', alt: 'Photo 13', label: 'Us' }
         ]}
         paragraph="This is where our journey began, a moment captured in time that will forever hold a special place in our hearts."
         backgroundTexts={['Forever', 'Always', 'Together', 'Love', 'Us']}
@@ -370,7 +393,7 @@ const Details = () => {
         >
           <path 
             d="M0,50 Q300,20 600,50 T1200,50" 
-            stroke="#800020" 
+            stroke="#C97B8B" 
             strokeWidth="2" 
             fill="none"
             opacity="0.4"
@@ -388,7 +411,7 @@ const Details = () => {
           <div className="content-section-divider" aria-hidden="true">
             <span className="content-section-divider-line" />
             <svg className="content-section-divider-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <path d="M50 10 L90 50 L50 90 L10 50 Z" fill="#800020" stroke="#800020" strokeWidth="2" />
+              <path d="M50 10 L90 50 L50 90 L10 50 Z" fill="#C97B8B" stroke="#C97B8B" strokeWidth="2" />
             </svg>
             <span className="content-section-divider-line" />
           </div>
@@ -400,7 +423,7 @@ const Details = () => {
           <div className="content-section-divider" aria-hidden="true">
             <span className="content-section-divider-line" />
             <svg className="content-section-divider-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <path d="M50 10 L90 50 L50 90 L10 50 Z" fill="#800020" stroke="#800020" strokeWidth="2" />
+              <path d="M50 10 L90 50 L50 90 L10 50 Z" fill="#C97B8B" stroke="#C97B8B" strokeWidth="2" />
             </svg>
             <span className="content-section-divider-line" />
           </div>
@@ -413,7 +436,7 @@ const Details = () => {
       </div>
 
       {/* FAQ Section - Outside container */}
-      <div className="relative z-20 mt-20 faq-section">
+      <div id="faq" className="relative z-20 mt-20 faq-section">
         <div ref={faqRef} className="relative z-10 w-full px-8 sm:px-12 md:px-8 lg:px-16">
           <h3 ref={faqTitleRef} className="relative inline-block px-6 py-3 mb-12 text-center w-full">
             <span 
@@ -424,7 +447,14 @@ const Details = () => {
           </h3>
           {faqItems && faqItems.faqData && (
             <div className="space-y-6 max-w-[600px] mx-auto">
-              {faqItems.faqData.map((item, index) => {
+              {(() => {
+                const totalFaqs = faqItems.faqData.length
+                const minimizedCount = Math.max(0, totalFaqs - DEFAULT_VISIBLE_FAQS)
+                const visibleFaqs = showAllFaqs ? faqItems.faqData : faqItems.faqData.slice(0, DEFAULT_VISIBLE_FAQS)
+
+                return (
+                  <>
+                    {visibleFaqs.map((item, index) => {
                 const { text } = getFaqIconAndText(item.question)
                 return (
                   <div key={index}>
@@ -436,12 +466,45 @@ const Details = () => {
                         A: {item.answer}
                       </p>
                     </div>
-                    {index < faqItems.faqData.length - 1 && (
+                    {index < visibleFaqs.length - 1 && (
                       <div className="h-px bg-[#f5f5f0]/30 mt-6"></div>
                     )}
                   </div>
                 )
-              })}
+                    })}
+
+                    {minimizedCount > 0 && (
+                      <div className="pt-2">
+                        <div className="flex items-center gap-3 mt-6">
+                          <span className="flex-1 h-px bg-[#f5f5f0]/25" />
+                          <button
+                            type="button"
+                            onClick={() => setShowAllFaqs(v => !v)}
+                            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f5f5f0]/30 text-[#f5f5f0] hover:bg-[#f5f5f0]/10 transition-colors"
+                            aria-expanded={showAllFaqs}
+                            aria-label={showAllFaqs ? `Hide ${minimizedCount} FAQs` : `Show ${minimizedCount} more FAQs`}
+                          >
+                            <span className="text-sm font-albert">
+                              {showAllFaqs ? `Hide ${minimizedCount}` : `Show ${minimizedCount} more`}
+                            </span>
+                            <ChevronDown
+                              className={`w-4 h-4 transition-transform ${showAllFaqs ? 'rotate-180' : ''}`}
+                              aria-hidden="true"
+                            />
+                          </button>
+                          <span className="flex-1 h-px bg-[#f5f5f0]/25" />
+                        </div>
+
+                        {!showAllFaqs && (
+                          <p className="mt-2 text-center text-xs font-albert text-[#f5f5f0]/80">
+                            +{minimizedCount} FAQs minimized
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </>
+                )
+              })()}
             </div>
           )}
         </div>
@@ -449,7 +512,7 @@ const Details = () => {
 
       {/* Graphics with horizontal lines */}
       <div className="mt-12 relative z-20">
-        <Divider />
+        <Divider theme="blush" />
       </div>
 
     </section>
@@ -475,7 +538,7 @@ const Details = () => {
           navigate('/')
         }
       }}
-      className="fixed bottom-12 right-6 z-[100] w-14 h-14 bg-[#800020] text-white rounded-full shadow-lg hover:bg-[#600018] hover:scale-110 transition-all duration-300 flex items-center justify-center group back-button"
+      className="fixed bottom-12 right-6 z-[100] w-14 h-14 bg-[#C97B8B] text-white rounded-full shadow-lg hover:bg-[#B76E79] hover:scale-110 transition-all duration-300 flex items-center justify-center group back-button"
       aria-label="Back to home"
     >
       <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-300" />

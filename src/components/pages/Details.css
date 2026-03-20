@@ -14,7 +14,7 @@
 
 .venue-title-text {
   line-height: 0.8;
-  color: #800020;
+  color: #C97B8B;
 }
 
 /* Venue Image Container */
@@ -47,7 +47,7 @@
   display: flex;
   gap: 1rem;
   width: max-content;
-  animation: venue-carousel-scroll 45s linear infinite;
+  animation: venue-carousel-scroll 45.5s linear infinite;
 }
 
 .venue-carousel-track:hover {
@@ -104,7 +104,7 @@
 
 .program-title-text {
   line-height: 0.8;
-  color: #800020;
+  color: #C97B8B;
   display: block;
   text-align: center;
 }
@@ -116,7 +116,7 @@
 /* Date Selector */
 .date-month-year {
   font-style: italic;
-  color: #800020;
+  color: #C97B8B;
 }
 
 .heart-day-number {
@@ -139,7 +139,7 @@
 /* Dress Code */
 .dress-code-title-text {
   line-height: 0.8;
-  color: #800020;
+  color: #C97B8B;
   white-space: nowrap;
 }
 
@@ -178,7 +178,7 @@
   flex: 1;
   max-width: 6rem;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(128, 0, 32, 0.35) 20%, rgba(128, 0, 32, 0.5) 50%, rgba(128, 0, 32, 0.35) 80%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(201, 123, 139, 0.4) 20%, rgba(201, 123, 139, 0.6) 50%, rgba(201, 123, 139, 0.4) 80%, transparent);
 }
 
 .content-section-divider-icon {
@@ -319,9 +319,9 @@
   min-width: 200px;
   padding: 0.75rem 1.5rem;
   background: #fff;
-  border: 2px solid #800020;
+  border: 2px solid #C97B8B;
   border-radius: 8px;
-  color: #800020;
+  color: #C97B8B;
   font-weight: 500;
   font-size: 0.9375rem;
   cursor: pointer;
@@ -361,7 +361,7 @@
 
 .upload-title-text {
   line-height: 0.8;
-  color: #800020;
+  color: #C97B8B;
 }
 
 /* Single white card, centered, subtle shadow (left/bottom) */
@@ -458,7 +458,7 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  background-color: #800020;
+  background-color: #B05A73;
 }
 
 .faq-title-text {

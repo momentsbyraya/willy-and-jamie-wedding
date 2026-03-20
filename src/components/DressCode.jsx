@@ -65,7 +65,8 @@ const DressCode = () => {
           </h3>
           {/* General Dress Code Description */}
           <p className="text-base sm:text-lg font-albert font-thin mt-4 mb-4 dress-code-description">
-            Strictly formal. No slippers, shorts, jeans, tshirt, or white color.
+            {dresscode.mainDressCode?.description ||
+              'Strictly formal. No slippers, shorts, jeans, tshirt, or white color.'}
           </p>
         </div>
       </div>
@@ -84,13 +85,9 @@ const DressCode = () => {
               />
             </div>
             
-            {/* Color Palette - Burgundy Red and Black */}
+            {/* Color swatches from data: Burgundy, Blush Pink, Beige */}
             {(() => {
-              const dressCodeColors = [
-                { name: "Burgundy Red", hex: "#800020" },
-                { name: "Black", hex: "#000000" },
-                { name: "Dark Burgundy", hex: "#722F37" }
-              ];
+              const dressCodeColors = dresscode.sections[0]?.colors || []
               return (
                 <div className="flex flex-col items-center justify-center flex-shrink-0">
                   {dressCodeColors.map((color, colorIndex) => (
@@ -103,14 +100,13 @@ const DressCode = () => {
                         className="w-12 h-12 sm:w-16 sm:h-16 max-w-12 max-h-12 rounded-full border-2 border-white/30 shadow-md transition-transform duration-200 hover:scale-110"
                         style={{ backgroundColor: color.hex }}
                       />
-                      {/* Tooltip on hover */}
                       <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-[#171717] text-white text-xs font-albert rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
                         {color.name}
                       </div>
                     </div>
                   ))}
                 </div>
-              );
+              )
             })()}
           </div>
         )}

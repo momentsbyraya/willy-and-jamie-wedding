@@ -1,34 +1,26 @@
 {
   "mainDressCode": {
     "title": "Dress Code",
-    "description": "Strictly formal. No slippers, shorts, jeans, tshirt, or white color. Colors: brown, black, teal green, blue, gray, or beige only."
+    "description": "Strictly formal. No slippers, shorts, jeans, tshirt, or white color. Colors: burgundy, blush pink, or beige."
   },
   "sections": [
     {
       "title": "FORMAL ATTIRE",
       "type": "image",
       "image": "/assets/images/dresscode/blue.png",
-      "description": "Strictly formal. No slippers, shorts, jeans, tshirt, or white color. Colors: brown, black, teal green, blue, gray, or beige only.",
+      "description": "Strictly formal. No slippers, shorts, jeans, tshirt, or white color. Colors: burgundy, blush pink, or beige.",
       "colors": [
         {
-          "name": "Brown",
-          "hex": "#8B4513"
+          "name": "Burgundy",
+          "hex": "#800020"
         },
         {
-          "name": "Black",
-          "hex": "#000000"
-        },
-        {
-          "name": "Teal Green",
-          "hex": "#008080"
-        },
-        {
-          "name": "Blue Gray",
-          "hex": "#708090"
+          "name": "Blush Pink",
+          "hex": "#C97B8B"
         },
         {
           "name": "Beige",
-          "hex": "#D2B48C"
+          "hex": "#D9C9B0"
         }
       ]
     }

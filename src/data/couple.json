@@ -1,23 +1,23 @@
 {
   "bride": {
-    "firstName": "Siekinah",
-    "lastName": "Taradel",
-    "fullName": "Siekinah M. Taradel"
+    "firstName": "Jamie",
+    "lastName": "Bugarin",
+    "fullName": "Jamie Bugarin"
   },
   "groom": {
-    "firstName": "Mikko",
-    "lastName": "Bucay",
-    "fullName": "Angelo Mikko A. Bucay"
+    "firstName": "Willy",
+    "lastName": "Gallardo",
+    "fullName": "Willy Gallardo"
   },
-  "together": "Mikko & Siekinah",
-  "nickname": "Mikko and Siekinah",
-  "heroDisplay": "Mikko and Sikinah",
+  "together": "Willy & Jamie",
+  "nickname": "Willy and Jamie",
+  "heroDisplay": "Willy and Jamie",
   "wedding": {
-    "date": "2026-05-27",
+    "date": "2026-04-25",
     "time": "4:00 PM",
-    "dayOfWeek": "Wednesday",
-    "month": "May",
-    "day": "27",
+    "dayOfWeek": "Saturday",
+    "month": "April",
+    "day": "25",
     "year": "2026"
   }
 }

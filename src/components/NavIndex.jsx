@@ -20,6 +20,7 @@ const NavIndex = ({ onOpenRSVP }) => {
   const rsvpContainerRef = useRef(null)
   const detailsContainerRef = useRef(null)
   const momentsImagesRef = useRef(null)
+  const faqTextRef = useRef(null)
   const momentsTextRef = useRef(null)
 
   // Countdown state
@@ -52,6 +53,7 @@ const NavIndex = ({ onOpenRSVP }) => {
       if (momentsImagesRef.current) {
         gsap.set(momentsImagesRef.current.children, { opacity: 0, y: 30 })
       }
+      if (faqTextRef.current) gsap.set(faqTextRef.current, { opacity: 0, y: 20 })
       if (momentsTextRef.current) gsap.set(momentsTextRef.current, { opacity: 0, y: 20 })
       
       // Small delay to ensure opening screen is fully gone
@@ -147,12 +149,20 @@ const NavIndex = ({ onOpenRSVP }) => {
               )
             }
             
+            // FAQs text (above Our Moments) - simple slide in
+            if (faqTextRef.current) {
+              tl.fromTo(faqTextRef.current,
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+                "-=0.4"
+              )
+            }
             // Moments text - simple slide in
             if (momentsTextRef.current) {
               tl.fromTo(momentsTextRef.current,
                 { opacity: 0, y: 20 },
                 { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
-                "-=0.4"
+                "-=0.35"
               )
             }
       }, 300) // Small delay to ensure smooth transition
@@ -207,7 +217,7 @@ const NavIndex = ({ onOpenRSVP }) => {
           {/* Midnight Blue Envelope Image */}
         <div ref={envelopeRef} className="flex justify-center relative envelope-container">
           <img 
-            src="/assets/images/graphics/for envelopes (7).png" 
+            src="/assets/images/graphics/for envelop.png" 
             alt="Wedding Invitation" 
             className="w-[60vw] h-auto object-contain"
           />
@@ -301,7 +311,7 @@ const NavIndex = ({ onOpenRSVP }) => {
               className="bg-white relative polaroid-container"
             >
               <img 
-                src="/assets/images/prenup/prenup5.jpeg" 
+                src="/assets/images/prenup/prenup4.jpg" 
                 alt="Prenup photo" 
                 className="w-full object-cover polaroid-image"
               />
@@ -318,6 +328,14 @@ const NavIndex = ({ onOpenRSVP }) => {
 
         {/* Rectangle Container - Longer than wider */}
         <div className="flex justify-start items-start gap-6 relative rsvp-details-container">
+          {/* Flower behind Kindly RSVP (was under moments; blocked RSVP clicks) */}
+          <div className="relative rsvp-with-flower shrink-0">
+            <img
+              src="/assets/images/graphics/flower-7.png"
+              alt=""
+              className="absolute h-auto object-contain flower-7"
+              aria-hidden="true"
+            />
           <div 
             ref={rsvpContainerRef}
             className="bg-white flex flex-col cursor-pointer transition-transform duration-300 relative rsvp-container"
@@ -342,7 +360,7 @@ const NavIndex = ({ onOpenRSVP }) => {
             {/* Prenup Photo - 30% of container height */}
             <div className="w-full overflow-hidden rsvp-photo-container">
               <img 
-                src="/assets/images/prenup/prenup6.webp" 
+                src="/assets/images/prenup/prenup6.jpg" 
                 alt="Prenup photo" 
                 className="w-full h-full object-cover rsvp-photo"
               />
@@ -358,6 +376,7 @@ const NavIndex = ({ onOpenRSVP }) => {
                 <span className="nanum-myeongjo-regular rsvp-text-svp">SVP</span>
               </p>
             </div>
+          </div>
           </div>
           
           {/* New Container - Wider than long */}
@@ -405,13 +424,37 @@ const NavIndex = ({ onOpenRSVP }) => {
 
         {/* Three Polaroid Images Below RSVP and Details */}
         <div ref={momentsImagesRef} className="flex justify-center items-start gap-0 relative moments-images-container">
-          {/* Flower 7 - Under the images */}
-          <img 
-            src="/assets/images/graphics/flower-7.png" 
-            alt="Flower decoration" 
-            className="absolute h-auto object-contain flower-7"
-          />
-          
+          {/* FAQs — above Our Moments; opens Details scrolled to FAQ */}
+          <button
+            ref={faqTextRef}
+            type="button"
+            className="absolute cursor-pointer hover:opacity-80 transition-opacity duration-300 bg-transparent border-none outline-none faq-text-button"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              window.scrollTo(0, 0)
+              if (navRef.current) {
+                gsap.to(navRef.current, {
+                  x: '-100%',
+                  opacity: 0,
+                  duration: 0.5,
+                  ease: 'power2.in',
+                  onComplete: () => {
+                    navigate('/details', { state: { scrollTo: 'faq' } })
+                    setTimeout(() => window.scrollTo(0, 0), 0)
+                  }
+                })
+              } else {
+                navigate('/details', { state: { scrollTo: 'faq' } })
+                setTimeout(() => window.scrollTo(0, 0), 0)
+              }
+            }}
+          >
+            <span className="nanum-myeongjo-regular text-center underline pulsating-moments moments-text whitespace-normal leading-tight">
+              FREQUENTLY ASKED
+            </span>
+          </button>
+
           {/* VIEW OUR MOMENTS Text - Top Right */}
           <button
             ref={momentsTextRef}
@@ -420,16 +463,14 @@ const NavIndex = ({ onOpenRSVP }) => {
             onClick={(e) => {
               e.preventDefault()
               e.stopPropagation()
-              console.log('OUR MOMENTS clicked, navigating to /moments')
               // Slide out animation before navigation
               if (navRef.current) {
                 gsap.to(navRef.current, {
                   x: '-100%',
                   opacity: 0,
                   duration: 0.5,
-                  ease: "power2.in",
+                  ease: 'power2.in',
                   onComplete: () => {
-                    console.log('Animation complete, navigating...')
                     try {
                       navigate('/moments')
                     } catch (error) {
@@ -439,7 +480,6 @@ const NavIndex = ({ onOpenRSVP }) => {
                   }
                 })
               } else {
-                console.log('No navRef, navigating directly...')
                 try {
                   navigate('/moments')
                 } catch (error) {
@@ -479,7 +519,7 @@ const NavIndex = ({ onOpenRSVP }) => {
           >
             <div className="bg-white relative polaroid-1-container">
               <img 
-                src="/assets/images/prenup/prenup7.webp" 
+                src="/assets/images/prenup/prenup14.jpg" 
                 alt="Prenup photo" 
                 className="w-full object-cover polaroid-1-image"
               />
@@ -511,7 +551,7 @@ const NavIndex = ({ onOpenRSVP }) => {
           >
             <div className="bg-white relative polaroid-2-container">
               <img 
-                src="/assets/images/prenup/prenup4.jpeg" 
+                src="/assets/images/prenup/prenup5.jpg" 
                 alt="Prenup photo" 
                 className="w-full object-cover polaroid-2-image"
               />

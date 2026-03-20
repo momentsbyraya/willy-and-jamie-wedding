@@ -8,14 +8,14 @@ import './pages/Details.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Venue images for carousel (order: rece1, rece2, rece3, rece5, rece4, rece6)
+// Venue images for carousel (Poggio — spaces encoded for reliable loading)
 const VENUE_CAROUSEL_IMAGES = [
-  '/assets/images/venues/rece1.jpg',
-  '/assets/images/venues/rece2.jpg',
-  '/assets/images/venues/rece3.jpg',
-  '/assets/images/venues/rece5.jpg',
-  '/assets/images/venues/rece4.jpg',
-  '/assets/images/venues/rece6.png'
+  '/assets/images/venues/poggio%201.webp',
+  '/assets/images/venues/poggio%204.jpg',
+  '/assets/images/venues/poggio%205.webp',
+  '/assets/images/venues/poggio%206.webp',
+  '/assets/images/venues/poggio.webp',
+  '/assets/images/venues/pogio3.jpg'
 ]
 
 const Venue = () => {
@@ -30,7 +30,7 @@ const Venue = () => {
         start: "top 80%",
         animation: gsap.fromTo(venueTitleRef.current,
           { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+          { opacity: 1, y: 0, duration: 1.3, ease: "power2.out" }
         ),
         toggleActions: "play none none reverse"
       })
@@ -45,7 +45,7 @@ const Venue = () => {
           gsap.to(venueBlockRef.current, {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 1.3,
             ease: "power2.out"
           })
         }
@@ -82,13 +82,13 @@ const Venue = () => {
               <img
                 key={`${src}-${i}`}
                 src={src}
-                alt={`Viridis Countryside Garden – ${i % VENUE_CAROUSEL_IMAGES.length + 1}`}
+                alt={`${venue.name} – photo ${i % VENUE_CAROUSEL_IMAGES.length + 1}`}
               />
             ))}
           </div>
         </div>
 
-        {/* Single venue: Viridis Countryside Garden – Ceremony & Reception */}
+        {/* Single venue: Poggio Bustone Renewal Center */}
         <div className="flex flex-col items-center text-center max-w-xl mx-auto">
           <div className="text-lg sm:text-xl md:text-2xl font-boska text-[#333333] mb-1">
             {venue.name}

@@ -54,7 +54,7 @@ export const themeConfig = {
 
     // Calendar Configuration (Burgundy palette)
     calendar: {
-        weddingDate: '2026-05-27',          // Wedding date (YYYY-MM-DD format)
+        weddingDate: '2026-04-25',          // Wedding date (YYYY-MM-DD format)
         highlightColor: 'bg-[#7B4B4B]',     // Color for wedding date highlight (Muted burgundy)
         heartColor: 'text-[#7B4B4B]',      // Color for heart icon
         textColor: 'text-gray-700',         // Calendar text color

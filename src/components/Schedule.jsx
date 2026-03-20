@@ -177,7 +177,7 @@ const Schedule = () => {
             Order of Events
           </span>
         </h3>
-        <p className="text-sm sm:text-base md:text-lg font-albert text-[#722F37] text-center mt-4 mx-auto px-4 program-description">
+        <p className="text-sm sm:text-base md:text-lg font-albert text-[#C97B8B] text-center mt-4 mx-auto px-4 program-description">
           Join us as we celebrate this special day together
         </p>
         
@@ -201,7 +201,7 @@ const Schedule = () => {
                       >
                         <path 
                           d="M50,85 C30,70 10,50 10,30 C10,15 22,5 35,5 C42,5 48,8 50,12 C52,8 58,5 65,5 C78,5 90,15 90,30 C90,50 70,70 50,85 Z" 
-                          fill="#800020"
+                          fill="#C97B8B"
                         />
                       </svg>
                       <span className="absolute inset-0 flex items-center justify-center text-white font-boska font-semibold text-xl sm:text-2xl heart-day-number">
@@ -210,9 +210,9 @@ const Schedule = () => {
                     </div>
                   ) : (
                     <div 
-                      className={`flex items-center justify-center rounded-lg border ${isBesideHeart ? 'w-12 h-12 sm:w-14 sm:h-14 border-[#800020]/60' : 'w-10 h-10 sm:w-12 sm:h-12 border-[#800020]/30'}`}
+                      className={`flex items-center justify-center rounded-lg border ${isBesideHeart ? 'w-12 h-12 sm:w-14 sm:h-14 border-[#C97B8B]/60' : 'w-10 h-10 sm:w-12 sm:h-12 border-[#C97B8B]/30'}`}
                     >
-                      <span className="text-[#722F37] font-boska text-base sm:text-lg">
+                      <span className="text-[#C97B8B] font-boska text-base sm:text-lg">
                         {day}
                       </span>
                     </div>

@@ -1,20 +1,76 @@
 {
   "faqData": [
     {
-      "question": "What time should we arrive at the venue?",
-      "answer": "The ceremony will begin at 4:00 PM. We kindly ask guests to arrive about 30 minutes earlier to allow time for seating."
+      "question": "Are children allowed at the wedding?",
+      "answer": "While we love your little ones, we kindly ask that this celebration be for adults only. Thank you for understanding and helping us create a relaxed atmosphere."
     },
     {
-      "question": "Is there parking available at the venue?",
-      "answer": "Yes, parking is available at the venue. There will be designated parking areas for guests."
+      "question": "What’s an UNPLUGGED CEREMONY?",
+      "answer": "This means we kindly ask that you put phones and cameras away during the ceremony. Be present, soak it all in, and let our professional photographers/videographers do the magic."
     },
     {
-      "question": "Are kids allowed at the events?",
-      "answer": "As much as we adore children, our wedding will be an adults-only celebration. We hope you understand and can enjoy a special night out with us."
+      "question": "Can I bring a plus-one?",
+      "answer": "If your invitation includes a guest, we’d love for you to bring someone along! If not, we’d be honored to have you celebrate with us solo."
     },
     {
-      "question": "Can I bring a plus one?",
-      "answer": "We kindly ask that you attend according to the number of seats reserved for you. Additional guests not included in your RSVP will have a fee of 1,850 PHP per person. If you would like to add a guest, please let us know on or before April 10. Thank you for your understanding."
+      "question": "When should I RSVP?",
+      "answer": "We kindly request your RSVP by April 5, 2026. Your timely response helps us plan a comfortable experience for everyone. Thank you!"
+    },
+    {
+      "question": "What time should I arrive?",
+      "answer": "Please plan to arrive at least 1 hour before the ceremony. We’d love to start on time, and we’d hate for you to miss a single moment."
+    },
+    {
+      "question": "Can I arrive late?",
+      "answer": "We kindly ask that you arrive at least 45 minutes before the scheduled ceremony time. The ceremony will start promptly, and late arrivals may be asked to wait outside until the processional is over."
+    },
+    {
+      "question": "What if I can’t attend anymore?",
+      "answer": "We totally understand that things can come up unexpectedly. If you’re no longer able to attend, please let us know ASAP—at least one to two weeks before the wedding if possible."
+    },
+    {
+      "question": "Can I go straight to the reception if I can’t attend the ceremony?",
+      "answer": "Of course—just kindly let us know ahead of time so we can update your seat at the reception."
+    },
+    {
+      "question": "Is it okay to leave early?",
+      "answer": "Of course, your comfort matters most! If you need to step out early, we kindly ask that you do so after the main program (typically after dinner and toast) to avoid disruptions."
+    },
+    {
+      "question": "Do you prefer cash gifts?",
+      "answer": "Your presence at our wedding is the greatest gift of all. But if you wish to bless us with a little something extra, a monetary gift would be sincerely appreciated as we start our new life together."
+    },
+    {
+      "question": "Is there a minimum amount for cash gifts?",
+      "answer": "Not at all. There’s no minimum, no expectations, and no pressure. Whatever you give, whether small or big, will be deeply appreciated—your presence alone already means so much to us!"
+    },
+    {
+      "question": "Can we give our gift before or after the wedding day?",
+      "answer": "Absolutely! If it’s more convenient for you, feel free to send your gift before or after the big day."
+    },
+    {
+      "question": "Can I sit wherever I want?",
+      "answer": "There will be a seating plan for both the ceremony and reception. Don’t worry—we’ve arranged it thoughtfully so you’ll be surrounded by good vibes and even better company!"
+    },
+    {
+      "question": "Am I allowed to switch tables during the reception?",
+      "answer": "We kindly ask you to stay at your assigned seat for the program and meal. It keeps things organized and ensures everyone gets their share of everything!"
+    },
+    {
+      "question": "Is it okay to wear white?",
+      "answer": "We kindly ask guests to avoid wearing white or ivory, as those colors are reserved for the bride. Don’t worry—there are plenty of other gorgeous shades like burgundy, blush pink, or beige to slay in!"
+    },
+    {
+      "question": "Can I wear something super casual since I’m just a distant guest?",
+      "answer": "We love that you’re coming, no matter how close or far our bond is—but please dress in theme or semi-formal attire. Every guest is part of the aesthetic, not just the entourage!"
+    },
+    {
+      "question": "Can I take food home?",
+      "answer": "We kindly ask that all meals be enjoyed during the program. Leftovers will be handled by the couple’s team or family."
+    },
+    {
+      "question": "Can I post on social media?",
+      "answer": "Feel free to snap and share during the reception! Use our wedding hashtag—it’ll be displayed around the venue for easy tagging. During the ceremony, we kindly ask you to stay present and unplugged so everyone can soak in the moment."
     }
   ]
 }

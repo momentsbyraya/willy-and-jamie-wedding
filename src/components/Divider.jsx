@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Divider = () => {
+const Divider = ({ theme }) => {
+  const fillStroke = theme === 'blush' ? '#C97B8B' : '#800020'
   return (
     <div className="flex justify-center items-center" style={{ paddingTop: '2rem', paddingBottom: '1rem' }}>
       {/* Left horizontal line */}
@@ -13,8 +14,8 @@ const Divider = () => {
       >
         <path 
           d="M50 10 L90 50 L50 90 L10 50 Z" 
-          fill="#800020" 
-          stroke="#800020" 
+          fill={fillStroke}
+          stroke={fillStroke}
           strokeWidth="2"
         />
       </svg>

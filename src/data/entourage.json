@@ -1,116 +1,104 @@
 {
   "couple": {
     "groom": {
-      "name": "Angelo Mikko A. Bucay"
+      "name": "Willy Gallardo"
     },
     "bride": {
-      "name": "Siekinah M. Taradel"
+      "name": "Jamie Bugarin"
     }
   },
   "parents": {
     "groom": {
-      "father": "Roberto Dela Cruz",
-      "mother": "Maria Elena Dela Cruz"
+      "father": "Julius Gallardo (Grandfather)",
+      "mother": "Jo Ann G. Gallardo"
     },
     "bride": {
-      "father": "Antonio Santos",
-      "mother": "Carmen Santos"
+      "father": "Arnel I. Bugarin",
+      "mother": "Carolina B. Bugarin"
     }
+  },
+  "ceremonialSponsors": {
+    "sand": ["Renee Julienne Punzalan"],
+    "cord": ["Katrina Gonzales"],
+    "veil": ["Elijah Spencer", "Jhanelle Bugarin"]
   },
   "entourageList": [
     {
       "category": "Principal Sponsors",
       "ninong": [
-        "Miguel Torres",
-        "Carlos Mendoza",
-        "Fernando Reyes",
-        "Rafael Villanueva",
-        "Eduardo Martinez",
-        "Jose Antonio Garcia",
-        "Dr. Luis Fernando Ramos",
-        "Ricardo Alcantara",
-        "Manuel Cruz Sr.",
-        "Alberto Fernandez",
-        "Rodrigo Bautista"
+        "Mr. & Mrs. Sergio Ceballos",
+        "Mr. & Mrs. Gilbert Antonio",
+        "Mr. & Mrs. Joseph Gallardo",
+        "Waldo Diaz",
+        "Mr. & Mrs. Maricel Andrade",
+        "Mr. & Mrs. Joseph Antonio",
+        "Mr. & Mrs. Jerry Alqueza",
+        "Ms. Nova Ramos",
+        "Ms. May Antonio",
+        "Mr. & Mrs. Thony Lee Atinto",
+        "Mr. & Mrs. Eddie Bugarin",
+        "Mr. & Mrs. Joel Dagsaan",
+        "Mr. & Mrs. Francis Dorde Jr.",
+        "Mr. & Mrs. Ryan Dabu",
+        "Mr. & Mrs. Jerby Bugarin",
+        "Mr. & Mrs. Timoteo Baluyot (additional)",
+        "Ms. Chona D. Ayatin"
       ],
-      "ninang": [
-        "Isabel Torres",
-        "Maria Cristina Abad",
-        "Patricia Buenaventura",
-        "Rosa Martinez",
-        "Angelica Santos",
-        "Carmen Dela Rosa",
-        "Atty. Maria Elena Castillo",
-        "Catherine Pineda",
-        "Monica Reyes",
-        "Grace Fernandez",
-        "Lucia Villanueva"
-      ]
+      "ninang": []
     },
     {
       "category": "Secondary Sponsors",
       "groomsmen": [
-        "Mark Anthony Rivera",
-        "Christian Mendoza",
-        "Jose Miguel Cruz",
-        "Michael Dela Paz",
-        "Benedicto Tan",
-        "Zachary Xavier Reyes",
-        "Jonathan Martinez"
+        "Cyrus Salcedo",
+        "Mario Orpano",
+        "Earl Lendl Corum",
+        "Vince Medrano",
+        "Frederick Apostol"
       ],
       "bridesmaid": [
-        "Isabella Torres",
-        "Amanda Fernandez",
-        "Patricia Ann Cabrera",
-        "Diana Rose Ocampo",
-        "Lynette Macapagal",
-        "Francesca Dela Paz",
-        "Katherine Gomez"
+        "Renee Julienne Punzalan",
+        "Kristine Joyce Estrada",
+        "Katrina Gonzales",
+        "Sarah Kay Basa",
+        "Renzy Camille Dorde"
       ]
     },
     {
       "category": "Bestman",
       "names": [
-        "Daniel Dela Cruz"
+        "Elijah Spencer"
       ]
     },
     {
       "category": "Maid of Honor",
       "names": [
-        "Maria Isabel Santos"
+        "Jhanelle Bugarin"
       ]
     },
     {
       "category": "Bible Bearer",
       "names": [
-        "Gabriel Tan"
+        "Aedrian Pascual"
       ]
     },
     {
       "category": "Ring Bearer",
       "names": [
-        "Ethan James Santos"
+        "Brahm Baluyot"
       ]
     },
     {
       "category": "Coin Bearer",
       "names": [
-        "Nathaniel Soledad Cruz"
+        "Nico Bugarin"
       ]
     },
     {
       "category": "Flower Girls",
       "names": [
-        "Adrian Alvarez",
-        "Andrew Dimaculangan",
-        "Justin Ford Reyes"
-      ]
-    },
-    {
-      "category": "Here comes the bride",
-      "names": [
-        "Tita Rosario Torres",
-        "Vincent Torres"
+        "Aekesha Pascual",
+        "Esther Jael Odquin",
+        "Girleen May Shyle Antonio"
       ]
     }
   ]

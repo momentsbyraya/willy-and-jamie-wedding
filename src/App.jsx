@@ -26,10 +26,10 @@ function AppContent() {
     const preloadImages = async () => {
       const criticalImages = [
         // NavIndex images - all prenup photos used on home page
-        '/assets/images/prenup/prenup5.jpeg',   // Polaroid image
-        '/assets/images/prenup/prenup6.webp',   // RSVP container
-        '/assets/images/prenup/prenup7.webp',   // Moments polaroid 1
-        '/assets/images/prenup/prenup4.jpeg',   // Moments polaroid 2
+        '/assets/images/prenup/prenup4.jpg',   // Polaroid image
+        '/assets/images/prenup/prenup6.jpg',   // RSVP container
+        '/assets/images/prenup/prenup14.jpg',  // Moments polaroid 1
+        '/assets/images/prenup/prenup5.jpg',   // Moments polaroid 2
         // NavIndex graphics - all decorative elements
         '/assets/images/graphics/midnight-blue-envelope.png',
         '/assets/images/graphics/flower-1.png',

@@ -1,23 +1,23 @@
 {
   "ceremony": {
-    "name": "Viridis Countryside Garden",
+    "name": "Poggio Bustone Renewal Center",
     "address": "",
     "city": "Ceremony & Reception",
     "state": "",
     "zip": "",
     "time": "",
     "details": "Ceremony and reception at one place",
-    "googleMapsUrl": "https://maps.app.goo.gl/qwmeANuoXukG46eK9"
+    "googleMapsUrl": "https://maps.app.goo.gl/3HQwbwKiSi8v81wYA"
   },
   "reception": {
-    "name": "Viridis Countryside Garden",
+    "name": "Poggio Bustone Renewal Center",
     "address": "",
     "city": "Ceremony & Reception",
     "state": "",
     "zip": "",
     "time": "",
     "details": "Ceremony and reception at one place",
-    "landmark": "Garden Ceremony & Reception",
-    "googleMapsUrl": "https://maps.app.goo.gl/qwmeANuoXukG46eK9"
+    "landmark": "Ceremony & Reception",
+    "googleMapsUrl": "https://maps.app.goo.gl/3HQwbwKiSi8v81wYA"
   }
 }
