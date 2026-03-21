@@ -500,7 +500,19 @@ const Moments = () => {
           <div ref={firstParagraphRef} className="relative z-20 w-full max-w-4xl px-8 sm:px-12 md:px-8 lg:px-16">
             <div className="alice-regular font-black text-[#333333] leading-relaxed text-center" style={{ fontWeight: 900, fontSize: '1rem', lineHeight: '1.8' }}>
               <p className="mb-4">
-                To be added
+                Almost five years of knowing each other—years that quietly wove two separate lives into something shared.
+              </p>
+              <p className="mb-4">
+                Nearly two years of courting taught us patience. We learned each other&apos;s rhythms, the quiet pauses, the laughter that came easily, and even the silences that didn&apos;t need filling.
+              </p>
+              <p className="mb-4">
+                Then came two years of being together—not just as two people in love, but as partners choosing each other every day.
+              </p>
+              <p className="mb-4">
+                A year ago, we said yes to forever. Engagement wasn&apos;t just a promise—it was a continuation of everything we had already started. It was choosing, once again, the same person who had been there from the beginning, only now with deeper certainty and a clearer future in mind.
+              </p>
+              <p className="mb-4">
+                And now, here we are—standing on the edge of a new chapter. Not a beginning from scratch, but a beautiful continuation of a story we&apos;ve been writing all along. Every year, every moment, has led us here.
               </p>
             </div>
           </div>

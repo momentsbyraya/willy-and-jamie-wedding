@@ -215,19 +215,21 @@ const NavIndex = ({ onOpenRSVP }) => {
         {/* Container 2: Rest of the Content */}
         <div className="relative">
           {/* Midnight Blue Envelope Image */}
-        <div ref={envelopeRef} className="flex justify-center relative envelope-container">
+        <div ref={envelopeRef} className="flex justify-center relative z-0 isolate envelope-container">
+          {/* Flower first + lower z-index so it stays behind the envelope art and under the Entourage oval (sibling z-20) */}
           <img 
-            src="/assets/images/graphics/for envelop.png" 
-            alt="Wedding Invitation" 
-            className="w-[60vw] h-auto object-contain"
+            ref={flower1Ref}
+            src="/assets/images/graphics/flower-1.png" 
+            alt="Flower decoration" 
+            className="absolute bottom-[0%] -left-[10%] z-0 w-[45vw] h-auto object-contain pointer-events-none flower-1-rotate flower-1-container"
           />
-           {/* Flower 1 - Bottom Left */}
-           <img 
-             ref={flower1Ref}
-             src="/assets/images/graphics/flower-1.png" 
-             alt="Flower decoration" 
-             className="absolute bottom-[0%] -left-[10%] w-[45vw] h-auto object-contain flower-1-rotate flower-1-container"
-           />
+          <div className="relative z-[1] w-[60vw] shrink-0">
+            <img 
+              src="/assets/images/graphics/for envelop.png" 
+              alt="Wedding Invitation" 
+              className="w-full h-auto object-contain"
+            />
+          </div>
         </div>
 
         {/* Container with border radius 50% and Polaroid Image */}

@@ -1,33 +1,13 @@
 {
   "paymentMethods": [
     {
-      "name": "BDO",
-      "image": "/assets/images/qr/qr1.png",
-      "accountInfo": {
-        "provider": "BDO",
-        "accountNumber": "",
-        "accountName": "",
-        "qrCode": "/assets/images/qr/qr1.png"
-      }
-    },
-    {
       "name": "InstaPay",
-      "image": "/assets/images/qr/qr2.png",
+      "image": "/assets/images/qr/image.png",
       "accountInfo": {
         "provider": "InstaPay",
         "accountNumber": "",
         "accountName": "",
-        "qrCode": "/assets/images/qr/qr2.png"
-      }
-    },
-    {
-      "name": "GoTyme Bank",
-      "image": "/assets/images/qr/qr3.png",
-      "accountInfo": {
-        "provider": "GoTyme",
-        "accountNumber": "",
-        "accountName": "",
-        "qrCode": "/assets/images/qr/qr3.png"
+        "qrCode": "/assets/images/qr/image.png"
       }
     }
   ]

@@ -4,6 +4,12 @@ import { gsap } from 'gsap'
 import { X } from 'lucide-react'
 import { themeConfig } from '../config/themeConfig'
 
+/** Short link (share / fallback) */
+const RSVP_FORM_URL = 'https://forms.gle/rxpoHRzgFckpuPwbA'
+/** Google Forms embed URL — same form as `RSVP_FORM_URL`, `embedded=true` allows iframe */
+const RSVP_FORM_EMBED_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLSfVnujn_Co0PZGjHIXILmyUkqWAvLW0JhuITOmdQeVrs--9NA/viewform?embedded=true'
+
 const RSVPModal = ({ isOpen, onClose }) => {
   const modalRef = useRef(null)
   const overlayRef = useRef(null)
@@ -75,26 +81,40 @@ const RSVPModal = ({ isOpen, onClose }) => {
       {/* Modal Content */}
       <div
         ref={contentRef}
-        className={`relative ${themeConfig.paragraph.background} rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden`}
+        className={`relative ${themeConfig.paragraph.background} rounded-2xl shadow-2xl max-w-4xl w-full max-h-[92vh] flex flex-col overflow-hidden`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-300/50">
-          <h2 className="text-2xl font-leckerli font-light text-gray-900/70">RSVP</h2>
+        <div className="flex shrink-0 items-center justify-between px-4 py-3 sm:px-6 sm:py-4 border-b border-gray-300/50">
+          <h2 className="text-xl sm:text-2xl font-leckerli font-light text-gray-900/70">RSVP</h2>
           <button
+            type="button"
             onClick={handleClose}
             className="p-2 text-gray-700 hover:text-gray-900 hover:bg-gray-200/50 rounded-full transition-colors duration-200"
+            aria-label="Close RSVP"
           >
             <X className="w-6 h-6" />
           </button>
         </div>
-        
-        {/* Content */}
-        <div className="p-10">
-          <div className="w-full min-h-[240px] flex items-center justify-center rounded-lg border border-gray-300/60 bg-white/70">
-            <p className="text-center text-lg sm:text-xl font-albert text-gray-900/70">
-              To be added
-            </p>
-          </div>
+
+        {/* Embedded Google Form */}
+        <div className="flex flex-1 flex-col min-h-0 bg-white">
+          <iframe
+            title="RSVP — Willy and Jamie"
+            src={RSVP_FORM_EMBED_URL}
+            className="w-full min-h-[400px] h-[min(75vh,720px)] border-0 bg-white"
+          />
+          <p className="shrink-0 text-center px-3 py-2 text-xs sm:text-sm font-albert text-gray-600 border-t border-gray-200/80 bg-gray-50/90">
+            <a
+              href={RSVP_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#800020] underline hover:opacity-80"
+            >
+              Open form in a new tab
+            </a>
+            <span className="text-gray-400"> · </span>
+            <span className="break-all text-gray-500">{RSVP_FORM_URL}</span>
+          </p>
         </div>
       </div>
     </div>,

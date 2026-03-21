@@ -290,8 +290,16 @@
   border: 1px solid #d4d4d4;
   border-radius: 12px;
   overflow: hidden;
-  cursor: pointer;
+  cursor: default;
   transition: box-shadow 0.2s;
+}
+
+/* Single primary QR — larger, readable on phones */
+.gift-registry-qr-box--single {
+  width: min(100%, 17.5rem);
+  height: auto;
+  aspect-ratio: 1;
+  margin-bottom: 2rem;
 }
 .gift-registry-qr-box:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);

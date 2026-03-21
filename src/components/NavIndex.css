@@ -19,8 +19,10 @@
   transform: translateY(30px);
 }
 
-/* Flower 1 */
+/* Flower 1 — behind envelope graphic (z-0 vs z-[1] on img); does not intercept clicks */
 .flower-1-container {
+  z-index: 0;
+  pointer-events: none;
   transform: translate(-20%, 10%) rotate(-25deg);
   opacity: 0;
   scale: 0;
