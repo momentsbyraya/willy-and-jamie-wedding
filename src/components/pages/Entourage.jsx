@@ -627,7 +627,7 @@ const Entourage = () => {
                         className="text-[10px] sm:text-sm md:text-base lg:text-lg alice-regular mb-1 uppercase"
                         style={{ color: ACCENT }}
                       >
-                        Sand Sponsor
+                        Candle Sponsor
                       </p>
                       {entourage.ceremonialSponsors.sand.map((name, index) => (
                         <p
@@ -663,7 +663,7 @@ const Entourage = () => {
                         className="text-[10px] sm:text-sm md:text-base lg:text-lg alice-regular mb-1 uppercase"
                         style={{ color: ACCENT }}
                       >
-                        Veil Sponsors
+                        Veil Sponsor
                       </p>
                       <p className="text-[10px] sm:text-sm md:text-base lg:text-lg font-poppins uppercase text-[#333333]">
                         {entourage.ceremonialSponsors.veil.join(' | ')}
