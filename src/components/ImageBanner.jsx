@@ -1,7 +1,13 @@
 import React from 'react'
 import GradientLayer from './GradientLayer'
 
-const ImageBanner = ({ src, alt = "Banner image", objectPosition = '32% 25%', theme }) => {
+const ImageBanner = ({
+  src,
+  alt = 'Banner image',
+  objectPosition = '32% 25%',
+  theme,
+  imgClassName,
+}) => {
   const isBlush = theme === 'blush'
   const titleLight = isBlush ? '#1a1a1a' : '#722F37'
   const titleMain = isBlush ? '#000000' : '#800020'
@@ -12,8 +18,8 @@ const ImageBanner = ({ src, alt = "Banner image", objectPosition = '32% 25%', th
           <img 
             src={src} 
             alt={alt} 
-            className="w-full h-full object-cover"
-            style={{ objectPosition }}
+            className={`h-full w-full object-cover ${imgClassName ?? ''}`.trim()}
+            style={imgClassName ? undefined : { objectPosition }}
           />
           {/* Natural blend: photo → soft blue-pink → Where to go background */}
           {isBlush ? (

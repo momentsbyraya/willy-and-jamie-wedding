@@ -291,10 +291,11 @@ const Details = () => {
       className="relative pb-20 w-full overflow-hidden bg-[#FDF2F4] details-section"
     >
       {/* Prenup Image at Top */}
-      <ImageBanner 
-        src="/assets/images/prenup/prenup1.jpg" 
+      <ImageBanner
+        src="/assets/images/prenup/prenup10.jpg"
         alt="Prenup photo"
         theme="blush"
+        imgClassName="object-[50%_22%] sm:object-[50%_26%] md:object-[50%_28%] lg:object-[50%_30%]"
       />
       
       {/* Content – pulled up so hero image extends into this area (more picture frame) */}
